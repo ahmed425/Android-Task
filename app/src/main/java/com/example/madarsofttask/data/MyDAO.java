@@ -1,8 +1,10 @@
-package com.example.madarsofttask;
+package com.example.madarsofttask.data;
 
 import androidx.room.Dao;
 import androidx.room.Insert;
 import androidx.room.Query;
+
+import com.example.madarsofttask.models.User;
 
 import java.util.List;
 

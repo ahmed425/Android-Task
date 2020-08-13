@@ -1,4 +1,4 @@
-package com.example.madarsofttask;
+package com.example.madarsofttask.models;
 
 import androidx.annotation.NonNull;
 import androidx.room.Entity;
