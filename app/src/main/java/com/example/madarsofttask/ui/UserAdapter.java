@@ -1,4 +1,4 @@
-package com.example.madarsofttask;
+package com.example.madarsofttask.ui;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,6 +8,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.madarsofttask.R;
 import com.example.madarsofttask.models.User;
 
 import java.util.ArrayList;

@@ -11,10 +11,9 @@ import java.util.List;
 @Dao
 public interface MyDAO {
 @Insert
-    public void addUser(User user);
+void addUser(User user);
 
 @Query("select * from users")
-
-public List<User> getUsers();
+List<User> getUsers();
 
 }
