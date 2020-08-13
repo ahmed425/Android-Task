@@ -17,7 +17,7 @@ public class ReadUserData extends AppCompatActivity {
         recyclerView.setHasFixedSize(true);
         final UserAdapter UserAdapter = new UserAdapter();
         recyclerView.setAdapter(UserAdapter);
-        UserViewModel myUserViewModel = ViewModelProviders.of(this).get(UserViewModel.class);
+       UserViewModel myUserViewModel = ViewModelProvider(this).get(UserViewModel::class.java)
         myUserViewModel.getAllUsers().observe(this, users -> UserAdapter.setUsers(users));
     }
 }
