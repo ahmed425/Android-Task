@@ -30,7 +30,7 @@ private EditText userName,userAge,userTitle,userGender;
         Button btnSave = findViewById(R.id.save_btn);
         Button btnDisplay = findViewById(R.id.display_button);
         myAppDatabase= Room.databaseBuilder(getApplicationContext(), UserDatabase.class,"userDB").allowMainThreadQueries().build();
-        myUserViewModel= ViewModelProviders.of(this).get(UserViewModel.class);
+        myUserViewModel = ViewModelProvider(this).get(UserViewModel::class.java)
         myUserViewModel.init();
         btnSave.setOnClickListener(view -> {
             double age=Double.parseDouble(userAge.getText().toString());
