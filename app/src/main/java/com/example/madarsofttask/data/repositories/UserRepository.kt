@@ -7,14 +7,14 @@ import com.example.madarsofttask.data.models.User
 class UserRepository {
     val users: MutableLiveData<List<User?>?>
         get() {
-            val users = BaseApplication.userDatabase!!.myDAO()!!.retrieveUsers()
+            val users = BaseApplication.userDatabase?.myDAO()?.retrieveUsers()
             val usersData = MutableLiveData<List<User?>?>()
             usersData.value = users
             return usersData
         }
 
     fun saveUser(user: User?) {
-        BaseApplication.userDatabase!!.myDAO()!!.addUser(user)
+        BaseApplication.userDatabase?.myDAO()?.addUser(user)
     }
 
     companion object {

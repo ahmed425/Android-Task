@@ -18,21 +18,19 @@ class ListUsersActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_read_user_data)
-
         initUI()
         initViewModel()
-        users
+        getUsers()
     }
+
     override fun onSupportNavigateUp(): Boolean {
         onBackPressed()
         return true
     }
 
-    private val users: Unit
-        get() {
-            listUsersViewModel!!.allUsers.observe(this, Observer { users: List<User?>? -> userAdapter!!.setUsers(users as List<User>) })
-
-        }
+    private fun getUsers() {
+        listUsersViewModel?.allUsers?.observe(this, Observer { users: List<User?>? -> userAdapter?.setUsers(users as List<User>) })
+    }
 
     private fun initViewModel() {
         listUsersViewModel = ViewModelProvider(this).get(ListUsersViewModel::class.java)
@@ -41,10 +39,10 @@ class ListUsersActivity : AppCompatActivity() {
     private fun initUI() {
         val actionbar = supportActionBar
         //set actionbar title
-        actionbar!!.title = getString(R.string.saved_users_list)
+        actionbar?.title = getString(R.string.saved_users_list)
         //set back button
-        actionbar.setDisplayHomeAsUpEnabled(true)
-        actionbar.setDisplayHomeAsUpEnabled(true)
+        actionbar?.setDisplayHomeAsUpEnabled(true)
+        actionbar?.setDisplayHomeAsUpEnabled(true)
         recyclerView = recycler_view
         recyclerView?.layoutManager = LinearLayoutManager(this)
         recyclerView?.setHasFixedSize(true)

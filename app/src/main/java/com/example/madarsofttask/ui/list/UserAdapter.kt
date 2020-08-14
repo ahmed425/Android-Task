@@ -36,9 +36,9 @@ class UserAdapter : RecyclerView.Adapter<UserHolder>() {
     class UserHolder(itemView: View) : ViewHolder(itemView) {
         fun bind(user: User) {
             itemView.title_textView.text = user.jobTitle
-    itemView.name_textView.text = user.name
+            itemView.name_textView.text = user.name
             itemView.age_textView.text = user.age.toString()
-    itemView.gender_textView.text=user.gender
+            itemView.gender_textView.text = user.gender
         }
 
     }

@@ -13,7 +13,7 @@ class AddUserViewModel : ViewModel() {
         user.jobTitle = title
         user.age = age
         user.gender = gender
-        userRepo!!.saveUser(user)
+        userRepo?.saveUser(user)
     }
 
 }
