@@ -1,6 +1,7 @@
 package com.example.madarsofttask.ui.list
 
 import android.os.Bundle
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -8,7 +9,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.madarsofttask.R
 import com.example.madarsofttask.data.models.User
-import kotlinx.android.synthetic.main.activity_read_user_data.*
+import kotlinx.android.synthetic.main.activity_list_users.*
 
 @Suppress("UNCHECKED_CAST")
 class ListUsersActivity : AppCompatActivity() {
@@ -17,7 +18,7 @@ class ListUsersActivity : AppCompatActivity() {
     private var userAdapter: UserAdapter? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_read_user_data)
+        setContentView(R.layout.activity_list_users)
         initUI()
         initViewModel()
         getUsers()
@@ -29,7 +30,15 @@ class ListUsersActivity : AppCompatActivity() {
     }
 
     private fun getUsers() {
-        listUsersViewModel?.allUsers?.observe(this, Observer { users: List<User?>? -> userAdapter?.setUsers(users as List<User>) })
+        listUsersViewModel?.allUsers?.observe(this, Observer { users: List<User?>? ->
+
+            if (users != null && users.isNotEmpty()) {
+                userAdapter?.setUsers(users as List<User>)
+            } else {
+                no_users_textView.visibility = View.VISIBLE
+            }
+        }
+        )
     }
 
     private fun initViewModel() {

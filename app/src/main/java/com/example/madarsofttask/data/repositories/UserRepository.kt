@@ -1,16 +1,13 @@
 package com.example.madarsofttask.data.repositories
 
-import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.LiveData
 import com.example.madarsofttask.application.BaseApplication
 import com.example.madarsofttask.data.models.User
 
 class UserRepository {
-    val users: MutableLiveData<List<User?>?>
+    val users: LiveData<List<User?>?>?
         get() {
-            val users = BaseApplication.userDatabase?.myDAO()?.retrieveUsers()
-            val usersData = MutableLiveData<List<User?>?>()
-            usersData.value = users
-            return usersData
+            return BaseApplication.userDatabase?.myDAO()?.retrieveUsers()
         }
 
     fun saveUser(user: User?) {
