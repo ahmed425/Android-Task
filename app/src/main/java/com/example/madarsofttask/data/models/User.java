@@ -1,16 +1,15 @@
-package com.example.madarsofttask.models;
-
-import androidx.annotation.NonNull;
+package com.example.madarsofttask.data.models;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
 @Entity(tableName = "users")
 public class User {
-    @PrimaryKey @NonNull
-private String name;
-private double age;
-private String jobTitle;
-private String gender;
+    @PrimaryKey(autoGenerate = true)
+    private int id;
+    private String name;
+    private double age;
+    private String jobTitle;
+    private String gender;
 
     public String getName() {
         return name;
@@ -42,5 +41,13 @@ private String gender;
 
     public void setGender(String gender) {
         this.gender = gender;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }
