@@ -1,6 +1,7 @@
 package com.example.madarsofttask.ui.list
 
 import android.os.Bundle
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -18,14 +19,20 @@ class ListUsersActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_read_user_data)
+
         initUI()
         initViewModel()
         users
+    }
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return true
     }
 
     private val users: Unit
         get() {
             listUsersViewModel!!.allUsers.observe(this, Observer { users: List<User?>? -> userAdapter!!.setUsers(users as List<User>) })
+
         }
 
     private fun initViewModel() {
@@ -33,6 +40,12 @@ class ListUsersActivity : AppCompatActivity() {
     }
 
     private fun initUI() {
+        val actionbar = supportActionBar
+        //set actionbar title
+        actionbar!!.title = "Saved Users List"
+        //set back button
+        actionbar.setDisplayHomeAsUpEnabled(true)
+        actionbar.setDisplayHomeAsUpEnabled(true)
         recyclerView = recycler_view
         recyclerView?.layoutManager = LinearLayoutManager(this)
         recyclerView?.setHasFixedSize(true)

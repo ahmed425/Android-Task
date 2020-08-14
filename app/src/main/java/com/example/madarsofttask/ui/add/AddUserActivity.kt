@@ -11,11 +11,14 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.example.madarsofttask.R
 import com.example.madarsofttask.ui.list.ListUsersActivity
+import com.example.madarsofttask.ui.list.ListUsersViewModel
 import kotlinx.android.synthetic.main.activity_add_user.*
 
 class AddUserActivity : AppCompatActivity(), OnItemSelectedListener {
     private var userGender: String? = null
     private var addUserViewModel: AddUserViewModel? = null
+    private var listUsersViewModel: ListUsersViewModel? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_user)
@@ -42,6 +45,7 @@ class AddUserActivity : AppCompatActivity(), OnItemSelectedListener {
 
     private fun handleDisplayButton() {
         display_button!!.setOnClickListener { startActivity(Intent(this@AddUserActivity, ListUsersActivity::class.java)) }
+
     }
 
     private fun handleSaveButton() {
@@ -68,6 +72,7 @@ class AddUserActivity : AppCompatActivity(), OnItemSelectedListener {
 
     private fun initViewModel() {
         addUserViewModel = ViewModelProvider(this).get(AddUserViewModel::class.java)
+listUsersViewModel=ViewModelProvider(this).get(ListUsersViewModel::class.java)
     }
 
     private fun initUi() {
