@@ -5,8 +5,8 @@ import androidx.room.RoomDatabase;
 
 import com.example.madarsofttask.data.models.User;
 
-@Database(entities = {User.class},version = 1)
+@Database(entities = {User.class}, version = 1)
 public abstract class UserDatabase extends RoomDatabase {
-public abstract MyDAO myDAO();
+    public abstract MyDAO myDAO();
 
 }

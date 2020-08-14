@@ -4,15 +4,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.example.madarsofttask.R;
 import com.example.madarsofttask.data.models.User;
-
 import java.util.ArrayList;
 import java.util.List;
+
 public class UserAdapter extends RecyclerView.Adapter<UserAdapter.UserHolder> {
     private List<User> users = new ArrayList<>();
 
@@ -54,7 +52,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.UserHolder> {
             textViewGender = itemView.findViewById(R.id.gender_textView);
         }
 
-        void bind(User user){
+        void bind(User user) {
             textViewTitle.setText(user.getJobTitle());
             textViewName.setText(user.getName());
             textViewAge.setText(String.valueOf(user.getAge()));

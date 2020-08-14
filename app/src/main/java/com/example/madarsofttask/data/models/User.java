@@ -1,4 +1,5 @@
 package com.example.madarsofttask.data.models;
+
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 

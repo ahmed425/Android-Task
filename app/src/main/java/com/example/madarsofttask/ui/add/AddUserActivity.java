@@ -1,6 +1,8 @@
 package com.example.madarsofttask.ui.add;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
@@ -12,6 +14,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
+
 import com.example.madarsofttask.R;
 import com.example.madarsofttask.ui.list.ListUsersActivity;
 
@@ -20,20 +23,33 @@ public class AddUserActivity extends AppCompatActivity implements AdapterView.On
     private String userGender;
     private Button btnSave, btnDisplay;
     private AddUserViewModel addUserViewModel;
+    private Spinner genderSpinner;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_user);
-
-
         initUi();
-        userName.addTextChangedListener(addUserTextWatcher);
-        userAge.addTextChangedListener(addUserTextWatcher);
-        userTitle.addTextChangedListener(addUserTextWatcher);
+        setupGenderSpinner();
+        watchEditTextChanges();
         initViewModel();
         handleSaveButton();
         handleDisplayButton();
     }
+
+    private void watchEditTextChanges() {
+        userName.addTextChangedListener(addUserTextWatcher);
+        userAge.addTextChangedListener(addUserTextWatcher);
+        userTitle.addTextChangedListener(addUserTextWatcher);
+    }
+
+    private void setupGenderSpinner() {
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.genders, android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        genderSpinner.setAdapter(adapter);
+        genderSpinner.setOnItemSelectedListener(this);
+    }
+
     private TextWatcher addUserTextWatcher = new TextWatcher() {
 
         @Override
@@ -54,6 +70,7 @@ public class AddUserActivity extends AppCompatActivity implements AdapterView.On
 
         }
     };
+
     private void handleDisplayButton() {
         btnDisplay.setOnClickListener(view -> startActivity(new Intent(AddUserActivity.this, ListUsersActivity.class)));
     }
@@ -64,14 +81,14 @@ public class AddUserActivity extends AppCompatActivity implements AdapterView.On
             String name = userName.getText().toString();
             String title = userTitle.getText().toString();
             String gender = userGender;
-            addUserViewModel.addUser(name, title, age,gender);
+            addUserViewModel.addUser(name, title, age, gender);
             handleUserAdded();
         });
     }
 
     private void handleUserAdded() {
         Toast.makeText(AddUserActivity.this, getString(R.string.user_added_successfully), Toast.LENGTH_SHORT).show();
-clearForm();
+        clearForm();
     }
 
     private void clearForm() {
@@ -85,21 +102,18 @@ clearForm();
     }
 
     private void initUi() {
-        userName   = findViewById(R.id.name_editText);
-        userAge    = findViewById(R.id.age_editText);
-        userTitle  = findViewById(R.id.title_editText);
-        Spinner gender_spinner = findViewById(R.id.gender_spinner);
-        btnSave    = findViewById(R.id.save_btn);
+        userName = findViewById(R.id.name_editText);
+        userAge = findViewById(R.id.age_editText);
+        userTitle = findViewById(R.id.title_editText);
+        genderSpinner = findViewById(R.id.gender_spinner);
+        btnSave = findViewById(R.id.save_btn);
         btnDisplay = findViewById(R.id.display_button);
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,R.array.genders,android.R.layout.simple_spinner_item);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        gender_spinner.setAdapter(adapter);
-        gender_spinner.setOnItemSelectedListener(this);
+
     }
 
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-        userGender  = adapterView.getItemAtPosition(i).toString();
+        userGender = adapterView.getItemAtPosition(i).toString();
 
     }
 

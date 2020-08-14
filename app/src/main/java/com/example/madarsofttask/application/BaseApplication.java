@@ -16,6 +16,6 @@ public class BaseApplication extends Application {
     }
 
     private void initDB() {
-        userDatabase = Room.databaseBuilder(getApplicationContext(), UserDatabase.class,"userDB").allowMainThreadQueries().build();
+        userDatabase = Room.databaseBuilder(getApplicationContext(), UserDatabase.class, "userDB").allowMainThreadQueries().build();
     }
 }
