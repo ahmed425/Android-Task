@@ -1,6 +1,4 @@
-# Android-Task
-
-ِِ# Description:
+# Description:
 Android app that has Two screens:
 
 First screen:
