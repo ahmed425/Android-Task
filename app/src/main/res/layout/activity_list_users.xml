@@ -19,6 +19,9 @@
         android:gravity="center"
         android:textAlignment="center"
         android:text="@string/no_users"
+        android:textSize="20sp"
+        android:textColor="#008000"
+        android:textStyle="bold"
         android:visibility="gone"
         />
 
