@@ -1,9 +1,9 @@
 # Description:
 Android app that has Two screens:
 
-First screen:
+## First screen:
 The user enters his name, age, job title and gender then when he clicks on Save the data is saved in Room DB
-Scecond screen:
+## Second screen:
 Showing the saved data.
 
 # Framework: 
