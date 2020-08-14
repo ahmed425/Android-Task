@@ -1,7 +1,6 @@
 package com.example.madarsofttask.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.lifecycle.ViewModelProviders;
 import androidx.room.Room;
 
 import android.content.Intent;
@@ -17,7 +16,6 @@ import com.example.madarsofttask.viewmodels.UserViewModel;
 public class AddUser extends AppCompatActivity {
 private EditText userName,userAge,userTitle,userGender;
     public static UserDatabase myAppDatabase;
-    private UserViewModel myUserViewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,7 +28,8 @@ private EditText userName,userAge,userTitle,userGender;
         Button btnSave = findViewById(R.id.save_btn);
         Button btnDisplay = findViewById(R.id.display_button);
         myAppDatabase= Room.databaseBuilder(getApplicationContext(), UserDatabase.class,"userDB").allowMainThreadQueries().build();
-        myUserViewModel = ViewModelProvider(this).get(UserViewModel::class.java)
+        UserViewModel myUserViewModel = new UserViewModel(getApplication());
+
         myUserViewModel.init();
         btnSave.setOnClickListener(view -> {
             double age=Double.parseDouble(userAge.getText().toString());

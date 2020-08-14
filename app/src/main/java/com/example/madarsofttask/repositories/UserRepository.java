@@ -5,12 +5,10 @@ import androidx.lifecycle.MutableLiveData;
 import com.example.madarsofttask.ui.AddUser;
 import com.example.madarsofttask.models.User;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class UserRepository {
 private static UserRepository instance;
-private ArrayList<User> dataSet=new ArrayList<>();
 public static UserRepository getInstance(){
    if(instance==null){
        instance=new UserRepository();

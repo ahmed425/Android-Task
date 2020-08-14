@@ -1,12 +1,11 @@
 package com.example.madarsofttask.models;
 
-import androidx.annotation.NonNull;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
 @Entity(tableName = "users")
 public class User {
-    @PrimaryKey @NonNull
+    @PrimaryKey
 private String name;
 private double age;
 private String jobTitle;

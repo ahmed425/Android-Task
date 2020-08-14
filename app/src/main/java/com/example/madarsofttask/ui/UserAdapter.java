@@ -38,19 +38,19 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.UserHolder> {
         return users.size();
     }
 
-    public void setUsers(List<User> users) {
+    void setUsers(List<User> users) {
         this.users = users;
         notifyDataSetChanged();
     }
 
-    class UserHolder extends RecyclerView.ViewHolder {
+    static class UserHolder extends RecyclerView.ViewHolder {
         private TextView textViewTitle;
         private TextView textViewName;
         private TextView textViewAge;
         private TextView textViewGender;
 
 
-        public UserHolder(View itemView) {
+        UserHolder(View itemView) {
             super(itemView);
             textViewTitle = itemView.findViewById(R.id.title_textView);
             textViewName = itemView.findViewById(R.id.name_textView);

@@ -1,6 +1,5 @@
 package com.example.madarsofttask.ui;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import android.os.Bundle;
@@ -17,7 +16,7 @@ public class ReadUserData extends AppCompatActivity {
         recyclerView.setHasFixedSize(true);
         final UserAdapter UserAdapter = new UserAdapter();
         recyclerView.setAdapter(UserAdapter);
-       UserViewModel myUserViewModel = ViewModelProvider(this).get(UserViewModel::class.java)
-        myUserViewModel.getAllUsers().observe(this, users -> UserAdapter.setUsers(users));
+       UserViewModel myUserViewModel = new UserViewModel(getApplication());
+        myUserViewModel.getAllUsers().observe(this, UserAdapter::setUsers);
     }
 }
