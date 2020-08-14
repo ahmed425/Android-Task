@@ -1,7 +1,6 @@
 package com.example.madarsofttask.ui.list
 
 import android.os.Bundle
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -42,7 +41,7 @@ class ListUsersActivity : AppCompatActivity() {
     private fun initUI() {
         val actionbar = supportActionBar
         //set actionbar title
-        actionbar!!.title = "Saved Users List"
+        actionbar!!.title = getString(R.string.saved_users_list)
         //set back button
         actionbar.setDisplayHomeAsUpEnabled(true)
         actionbar.setDisplayHomeAsUpEnabled(true)
