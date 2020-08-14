@@ -29,6 +29,9 @@ public class ListUsersActivity extends AppCompatActivity {
     }
 
     private void initUI() {
+        getSupportActionBar().setTitle(getString(R.string.saved_users_list));
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         recyclerView = findViewById(R.id.recycler_view);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setHasFixedSize(true);
