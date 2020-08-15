@@ -16,4 +16,4 @@ The app is implemented using both Kotlin (In this repository) and Java (Java Rep
 MVVM pattern.
 
 # Demo
-![Demo](https://i.imgur.com/Yq5x49j.gif)
+![Demo](https://i.imgur.com/mFUJmWM.gif)
