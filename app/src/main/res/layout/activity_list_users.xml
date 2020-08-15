@@ -12,17 +12,17 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:listitem="@layout/item_layout" />
+
     <TextView
         android:id="@+id/no_users_textView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center"
-        android:textAlignment="center"
         android:text="@string/no_users"
-        android:textSize="20sp"
+        android:textAlignment="center"
         android:textColor="#008000"
+        android:textSize="20sp"
         android:textStyle="bold"
-        android:visibility="gone"
-        />
+        android:visibility="gone" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

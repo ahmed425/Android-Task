@@ -10,7 +10,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.list.ListUsersActivity" android:parentActivityName=".ui.add.AddUserActivity"/>
+        <activity
+            android:name=".ui.list.ListUsersActivity"
+            android:parentActivityName=".ui.add.AddUserActivity" />
         <activity android:name=".ui.add.AddUserActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
