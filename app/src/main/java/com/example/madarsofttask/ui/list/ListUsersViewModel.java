@@ -2,8 +2,10 @@ package com.example.madarsofttask.ui.list;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.ViewModel;
+
 import com.example.madarsofttask.data.models.User;
 import com.example.madarsofttask.data.repositories.UserRepository;
+
 import java.util.List;
 
 public class ListUsersViewModel extends ViewModel {

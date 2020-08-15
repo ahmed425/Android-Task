@@ -4,10 +4,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
+
 import com.example.madarsofttask.R;
+
 import java.util.Objects;
 
 public class ListUsersActivity extends AppCompatActivity {

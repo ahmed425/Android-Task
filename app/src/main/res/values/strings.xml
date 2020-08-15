@@ -14,7 +14,7 @@
     </string-array>
     <string name="textview">TextView</string>
     <string name="display_saved_data">Display Saved Data</string>
-    <string name="user_added_successfully" >User Added Successfully</string>
+    <string name="user_added_successfully">User Added Successfully</string>
     <string name="saved_users_list">Saved Users List</string>
     <string name="no_users">No Users Found</string>
 </resources>
