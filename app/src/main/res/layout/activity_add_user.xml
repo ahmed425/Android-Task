@@ -67,7 +67,7 @@
         android:id="@+id/gender_spinner"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="53dp"
+        android:layout_marginTop="24dp"
         android:autofillHints=""
         android:ems="10"
         android:hint="@string/gender"
@@ -78,11 +78,22 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/title_editText" />
 
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="@string/gender"
+        app:layout_constraintEnd_toStartOf="@+id/gender_spinner"
+        app:layout_constraintHorizontal_bias="0.712"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/title_editText" />
+
     <Button
         android:id="@+id/save_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="28dp"
         android:enabled="false"
         android:text="@string/save"
         app:layout_constraintEnd_toEndOf="parent"
@@ -94,22 +105,13 @@
         android:id="@+id/display_button"
         android:layout_width="213dp"
         android:layout_height="48dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="8dp"
         android:text="@string/display_saved_data"
         android:textColor="#008000"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/save_btn" />
+        app:layout_constraintTop_toBottomOf="@+id/save_btn"
+        app:layout_constraintVertical_bias="0.013" />
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="56dp"
-        android:text="@string/gender"
-        app:layout_constraintEnd_toStartOf="@+id/gender_spinner"
-        app:layout_constraintHorizontal_bias="0.712"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/title_editText" />
 </androidx.constraintlayout.widget.ConstraintLayout>
