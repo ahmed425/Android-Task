@@ -14,6 +14,3 @@ The app is implemented using both Kotlin (Kotlin Repository Link: https://github
 
 # Pattern Used:
 MVVM pattern.
-
-# Demo
-![Demo](https://i.imgur.com/mFUJmWM.gif)
