@@ -10,7 +10,7 @@ Showing the saved data.
 Android Native Framework
 
 # Language: 
-The app is implemented using both Kotlin (Kotlin Repository Link: https://github.com/ahmed425/Android-Task/tree/With-Kotlin) and Java (In this Repository) 
+The app is implemented using both Java (In this Repository), and Kotlin (Kotlin Repository Link: https://github.com/ahmed425/Android-Task/tree/With-Kotlin).
 
 # Pattern Used:
 MVVM pattern.
